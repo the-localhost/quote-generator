@@ -11,7 +11,6 @@ Some new ideas (done)
 More ideas (todo)
 * Different quote on each click.
 * Dark/light theme switch button.
-* Using a self-made proxy (need to learn Nodejs first)
    
 You can checkout my project here: [Quote Generator](https://the-localhost.github.io/quote-generator/).  
 
