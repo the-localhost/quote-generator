@@ -3,6 +3,7 @@ const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
+const githubBtn = document.getElementById('github');
 const loader = document.getElementById('loader');
 
 const showLoadingSpinner = () => {
@@ -20,21 +21,21 @@ const removeLoadingSpinner = () => {
 // getting the quote from the API
 async function getQuote(event, params = 0) {
     showLoadingSpinner();
-    const apiUrl = 'https://type.fit/api/quotes';
+    const proxy = 'http://cors-anywhere.herokuapp.com/';
+    const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(proxy + apiUrl);
         const data = await response.json();
+        
         if(data['quoteText'].length>120){
             quoteText.classList.add('long-quote');
         }else{
             quoteText.classList.remove('long-quote');
+        
         }
         quoteText.innerHTML = data['quoteText'];
-        if(data['quoteAuthor'] === ''){
-            authorText.innerHTML = 'Unknown';
-        }else{
-            authorText.innerHTML = data['quoteAuthor'];
-        }
+        authorText.innerHTML = data['quoteAuthor'] === '' ? 'Unknown' : data['quoteAuthor'];
+
         removeLoadingSpinner();
     } catch (error) {
         console.log('No quotes available, trying again! ', error);
@@ -54,5 +55,11 @@ const tweetQuote = () => {
     window.open(twitterUrl, '_blank');
 }
 
+const seeCode = () => {
+    const repoUrl = "";
+    window.open(repoUrl, '_blank');
+}
+
 newQuoteBtn.addEventListener('click', getQuote);
 twitterBtn.addEventListener('click', tweetQuote);
+githubBtn.addEventListener('click', seeCode);
