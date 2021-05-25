@@ -56,7 +56,7 @@ const tweetQuote = () => {
 }
 
 const seeCode = () => {
-    const repoUrl = "https://github.com/the-localhost/quote-generator/";
+    const repoUrl = 'https://github.com/the-localhost/quote-generator/';
     window.open(repoUrl, '_blank');
 }
 
