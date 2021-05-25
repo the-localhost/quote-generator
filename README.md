@@ -6,7 +6,7 @@ This is a simple, dark theme, random quote generator. You can:
 
 Some new ideas (done)
 * Dark theme
-* See code button
+* Source code button
    
 More ideas (todo)
 * Different quote on each click.
