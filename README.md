@@ -11,6 +11,7 @@ Some new ideas (done)
 More ideas (todo)
 * Different quote on each click.
 * Dark/light theme switch button.
+* Cool animation background.
    
 You can checkout my project here: [Quote Generator](https://the-localhost.github.io/quote-generator/).  
 
