@@ -17,9 +17,7 @@ You can checkout my project here: [Quote Generator](https://the-localhost.github
 
 This project is inspired from [this](https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/) course. 
 
-## NOTE:
-The project hosted at above link is not functioning correctly due to issue with proxy.  
-Feel free to fork/clone the code and run on local machine.
-
+### Feedbacks are most welcome!
+Also feel free to fork and play with the code.
 
 
