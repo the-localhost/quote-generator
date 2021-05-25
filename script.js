@@ -21,20 +21,20 @@ const removeLoadingSpinner = () => {
 // getting the quote from the API
 async function getQuote(event, params = 0) {
     showLoadingSpinner();
-    const proxy = 'http://cors-anywhere.herokuapp.com/';
-    const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+    const apiUrl = 'https://type.fit/api/quotes';
     try {
-        const response = await fetch(proxy + apiUrl);
-        const data = await response.json();
-        
-        if(data['quoteText'].length>120){
+        const response = await fetch(apiUrl);
+        const apiQuotes = await response.json();
+        const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+
+        if(quote['text'].length>120){
             quoteText.classList.add('long-quote');
         }else{
             quoteText.classList.remove('long-quote');
         
         }
-        quoteText.innerHTML = data['quoteText'];
-        authorText.innerHTML = data['quoteAuthor'] === '' ? 'Unknown' : data['quoteAuthor'];
+        quoteText.innerHTML = quote['text'];
+        authorText.innerHTML = quote['author'] === '' ? 'Unknown' : quote['author'];
 
         removeLoadingSpinner();
     } catch (error) {
@@ -56,7 +56,7 @@ const tweetQuote = () => {
 }
 
 const seeCode = () => {
-    const repoUrl = 'https://github.com/the-localhost/quote-generator/';
+    const repoUrl = "";
     window.open(repoUrl, '_blank');
 }
 
