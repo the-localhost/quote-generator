@@ -21,8 +21,9 @@ const removeLoadingSpinner = () => {
 async function getQuote(event, params = 0) {
     showLoadingSpinner();
     //const proxy = 'http://cors-anywhere.herokuapp.com/';
-    const proxy = 'https://peaceful-plains-68186.herokuapp.com/';
-    const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+    //const proxy = 'https://peaceful-plains-68186.herokuapp.com/';
+    //const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+    const apiUrl = 'https://type.fit/api/quotes';
     try {
         const response = await fetch(proxy + apiUrl);
         const data = await response.json();
