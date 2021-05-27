@@ -9,7 +9,7 @@ Some new ideas (done)
 * Source code button
    
 More ideas (todo)
-* Different quote on each click.
+* Different quote on each click. ✅
 * Dark/light theme switch button.
 * Cool animation background.
    
