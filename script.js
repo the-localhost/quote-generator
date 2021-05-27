@@ -27,6 +27,11 @@ async function getQuote(event, params = 0) {
         const apiQuotes = await response.json();
         const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
+        // if the same quote is loaded again
+        if(quote.innerText == quote['text']){
+            throw "Same quote";
+        }
+
         if(quote['text'].length>120){
             quoteText.classList.add('long-quote');
         }else{
