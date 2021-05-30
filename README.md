@@ -10,7 +10,7 @@ Some new ideas (done)
    
 More ideas (todo)
 * Different quote on each click. ✅
-* Dark/light theme switch button.
+* Dark/light theme switch button. ✅
 * Cool animation background.
    
 You can checkout my project here: [Quote Generator](https://the-localhost.github.io/quote-generator/).  
@@ -19,5 +19,3 @@ This project is inspired from [this](https://www.udemy.com/course/javascript-web
 
 ### Feedbacks are most welcome!
 Also feel free to fork and play with the code.
-
-
