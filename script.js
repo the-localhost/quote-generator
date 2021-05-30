@@ -1,10 +1,13 @@
+const body = document.getElementsByTagName('body')[0];
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
+const buttons = document.getElementsByTagName('button');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const githubBtn = document.getElementById('github');
 const loader = document.getElementById('loader');
+const bulb = document.getElementById('bulb');
 
 const showLoadingSpinner = () => {
     quoteContainer.hidden = true;
@@ -65,6 +68,22 @@ const seeCode = () => {
     window.open(repoUrl, '_blank');
 }
 
+// switches theme between dark and light mode
+const switchTheme = () => {
+    body.classList.toggle('light-body');
+    bulb.classList.toggle('lit-bulb');
+    quoteContainer.classList.toggle('light-quote-container');
+    for(let button of buttons) 
+        button.classList.toggle('light-button');
+    loader.classList.toggle('light-loader');
+    let bulbTitle = bulb.getAttribute('title');
+    if(bulbTitle=='Light mode')
+        bulb.setAttribute('title', 'Dark mode');
+    else
+        bulb.setAttribute('title', 'Light mode');
+}
+
 newQuoteBtn.addEventListener('click', getQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 githubBtn.addEventListener('click', seeCode);
+bulb.addEventListener('click', switchTheme);
